@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    h3 {
+      font-family: Calibri, sans-serif;
+      font-size: 24px;
+      margin: 0;
+      padding: 16px;
+    }
+    .odin {
+      background-color: green;
+      text-align: center;
+    }
+    .neodin {
+      background-color: blue;
+      text-align: right;
+    }
+    .nottr {
+      background-color: orange;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+<script>
+    function showNum(num) {
+      var sum = 0;
+      var heading = document.createElement("h3");
+      if (num > 99 && num < 1000) {
+    while (num > 0) {
+    sum += num % 10;
+    num = Math.floor(num/10);
+}
+if(sum % 2 == 0)
+{
+heading.className = "odin";
+heading.textContent = "Сумма цифр четная";
+}
+if(sum % 2 != 0)
+{
+heading.className = "neodin";
+heading.textContent = "Сумма цифр нечетная";
+}
+      } else {
+        heading.className = "nottr";
+        heading.textContent = "Число не является трехзначным";
+      }
+      document.body.appendChild(heading);
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+      var num = prompt("Введите число:");
+      num = parseInt(num);
+      showNum(num);
+    });
+  </script>
+</body>
+</html>

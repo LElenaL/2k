@@ -1,0 +1,27 @@
+<html>
+<head>
+ <script>
+  function toggleImage() {
+   var img = document.getElementById("myImage");
+   var button = document.getElementById("toggleButton");
+   if (img.style.display === "none") {
+    img.style.display = "block";
+    button.innerHTML = "Спрятать";
+   } else {
+    img.style.display = "none";
+    button.innerHTML = "Показать";
+   }
+  }
+ </script>
+</head>
+<body>
+ <table style="border-collapse: collapse;">
+  <tr>
+   <td style="border: none;"><img id="myImage" src="flower.jpg" lt="" width="100" height="111"></td>
+   <td style="border: none;"><button id="toggleButton" onclick="toggleImage()">Спрятать</button> </td>
+
+  </tr>
+ </table>
+</body>
+</html>
+

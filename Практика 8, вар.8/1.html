@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Выравнивание заголовков</title>
+    <style>
+      h2 {
+        font-size: 16px;
+      }
+    </style>
+    <script>
+      function alignHeaders() {
+        const headers = document.querySelectorAll('h2');
+        const button = document.querySelector('button');
+
+        if (headers[0].style.textAlign === 'center') {
+          for (let i = 0; i < headers.length; i++) {
+            const header = headers[i];
+            header.style.textAlign = 'left';
+          }
+          button.innerHTML = 'Выровнять по центру';
+        } else {
+          for (let i = 0; i < headers.length; i++) {
+            const header = headers[i];
+            header.style.textAlign = 'center';
+          }
+          button.innerHTML = 'Выровнять по левому краю';
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Заголовок первого уровня</h1>
+    <h2>Заголовок второго уровня 1</h2>
+    <h2>Заголовок второго уровня 2</h2>
+    <h2>Заголовок второго уровня 3</h2>
+    <button onclick="alignHeaders()">Выровнять по центру</button>
+  </body>
+</html>
